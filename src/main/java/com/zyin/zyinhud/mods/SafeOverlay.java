@@ -667,7 +667,9 @@ public class SafeOverlay extends ZyinHUDModBase
             
             if (block.isOpaqueCube()
             	|| mc.theWorld.doesBlockHaveSolidTopSurface(mc.theWorld, new BlockPos(x + dx, y + dy, z + dz))
-            	|| block instanceof BlockFarmland)	//the one exception to the isOpaqueCube and doesBlockHaveSolidTopSurface rules
+                //removed the following line because mobs won't spawn on farmland
+            	// || block instanceof BlockFarmland)	//the one exception to the isOpaqueCube and doesBlockHaveSolidTopSurface rules
+                )
             {
                 return true;
             }

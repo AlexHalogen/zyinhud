@@ -100,7 +100,7 @@ public class Clock extends ZyinHUDModBase
                 long time = (mc.theWorld.getWorldTime()) % 24000;
 
             	//0 game time is 6am, so add 6000
-                long hours = (time + 6000) / 1000;
+                long hours = ((time + 6000) % 24000) / 1000; //fix the problem that a day taking longer than 24 hours
                 long seconds = (long)(((time + 6000) % 1000) * (60.0/1000.0));
 
                 if(IsNight())
